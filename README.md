@@ -6,7 +6,18 @@ Using a bot breaks Blizzard's Terms of Service and can get your account banned. 
 **Phase 1 = combat assist.** You move the character; the bot handles skills, Metamorphosis and potions.
 Movement, looting and chests come in later phases.
 
-## Setup (once)
+## Quick start (double-click)
+
+| File | What it does |
+|---|---|
+| `1-calibrate.bat` | One-time setup (see step 1 below) |
+| `2-debug.bat` | Shows what the bot sees. Sends no keys |
+| `3-run.bat` | Runs the bot |
+
+The first time you double-click any of them, it installs what the bot needs automatically (about a minute).
+If hotkeys don't respond, right-click the file and choose **Run as administrator**.
+
+## Manual setup (optional)
 
 ```bash
 python -m venv .venv
