@@ -1,0 +1,34 @@
+# Diablo IV Helltide bot - phase 1 (combat assist)
+window_title: "Diablo IV"
+
+keys:
+  summon: "3"          # Summon Abodian - pressed once (start / F8)
+  metamorphosis: "2"   # toggle! only pressed when slot 2 looks "ready"
+  scream: "6"          # Blazing Scream - spammed
+  cooldowns: ["1", "4"]
+  potion: "q"
+
+hotkeys:
+  start_pause: "f9"    # start / pause the bot
+  resummon: "f8"       # press 3 again (after death / teleport)
+  kill: "f12"          # stop the bot completely
+
+combat:
+  tick_ms: 40
+  # always = spam 6 nonstop, combat = only when enemy health bars are seen
+  scream_mode: always
+  scream_interval_ms: 150
+  cooldown_interval_ms: 400     # skills 1 and 4 are pressed this often (no-op while on cooldown)
+  combat_linger_s: 2.0          # keep screaming this long after last enemy bar seen
+  potion_below: 0.40            # drink potion under 40% HP
+  potion_cooldown_s: 2.0
+  meta_lockout_s: 3.0           # never press 2 twice within this window
+  meta_min_margin: 4.0          # how sure the slot-2 match must be before pressing
+  key_hold_ms: 30
+
+enemy_bars:                      # only used when scream_mode: combat
+  play_area: [0.05, 0.10, 0.95, 0.80]   # x1, y1, x2, y2 as fractions of the window
+  min_width: 30
+  min_height: 3
+  max_height: 14
+  min_aspect: 4.0
